@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3052D7729AA870000EEFA1F /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3052D7629AA870000EEFA1F /* CoinDataService.swift */; };
 		C37A04CA29A9FD0800507596 /* Tune8App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04C929A9FD0800507596 /* Tune8App.swift */; };
 		C37A04CC29A9FD0800507596 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04CB29A9FD0800507596 /* ContentView.swift */; };
 		C37A04CE29A9FD0A00507596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37A04CD29A9FD0A00507596 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3052D7629AA870000EEFA1F /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 		C37A04C629A9FD0800507596 /* Tune8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tune8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37A04C929A9FD0800507596 /* Tune8App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune8App.swift; sourceTree = "<group>"; };
 		C37A04CB29A9FD0800507596 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3052D7529AA86F300EEFA1F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C3052D7629AA870000EEFA1F /* CoinDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C37A04BD29A9FD0800507596 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 		C37A04C829A9FD0800507596 /* Tune8 */ = {
 			isa = PBXGroup;
 			children = (
+				C3052D7529AA86F300EEFA1F /* Services */,
 				C37A050529AA1DBF00507596 /* Models */,
 				C37A04F629AA025800507596 /* Core */,
 				C37A04F329A9FFCC00507596 /* Extensions */,
@@ -348,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3052D7729AA870000EEFA1F /* CoinDataService.swift in Sources */,
 				C37A050929AA200B00507596 /* CoinRowView.swift in Sources */,
 				C37A050F29AA6AC500507596 /* HomeViewModel.swift in Sources */,
 				C37A04CC29A9FD0800507596 /* ContentView.swift in Sources */,
