@@ -14,6 +14,7 @@
 		C37A04DB29A9FD0A00507596 /* Tune8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04DA29A9FD0A00507596 /* Tune8Tests.swift */; };
 		C37A04E529A9FD0A00507596 /* Tune8UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04E429A9FD0A00507596 /* Tune8UITests.swift */; };
 		C37A04E729A9FD0A00507596 /* Tune8UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04E629A9FD0A00507596 /* Tune8UITestsLaunchTests.swift */; };
+		C37A04F529A9FFDB00507596 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04F429A9FFDB00507596 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		C37A04E029A9FD0A00507596 /* Tune8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tune8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37A04E429A9FD0A00507596 /* Tune8UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune8UITests.swift; sourceTree = "<group>"; };
 		C37A04E629A9FD0A00507596 /* Tune8UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune8UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C37A04F429A9FFDB00507596 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		C37A04C829A9FD0800507596 /* Tune8 */ = {
 			isa = PBXGroup;
 			children = (
+				C37A04F329A9FFCC00507596 /* Extensions */,
 				C37A04C929A9FD0800507596 /* Tune8App.swift */,
 				C37A04CB29A9FD0800507596 /* ContentView.swift */,
 				C37A04CD29A9FD0A00507596 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				C37A04E629A9FD0A00507596 /* Tune8UITestsLaunchTests.swift */,
 			);
 			path = Tune8UITests;
+			sourceTree = "<group>";
+		};
+		C37A04F329A9FFCC00507596 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C37A04F429A9FFDB00507596 /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			files = (
 				C37A04CC29A9FD0800507596 /* ContentView.swift in Sources */,
 				C37A04CA29A9FD0800507596 /* Tune8App.swift in Sources */,
+				C37A04F529A9FFDB00507596 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
