@@ -12,12 +12,17 @@ extension PreviewProvider {
     static var dev: DeveloperPreview {
         DeveloperPreview.instance
     }
+    
+    
 }
 
 class DeveloperPreview {
     static let instance = DeveloperPreview()
+    private init() {}
+    
+    let mockHomeVM = HomeViewModel()
 
-    let coin: CoinModel =
+    let mockCoin: CoinModel =
         .init(id: "bitcoin",
               symbol: "btc",
               name: "Bitcoin",

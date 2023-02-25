@@ -22,6 +22,7 @@
 		C37A050929AA200B00507596 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A050829AA200B00507596 /* CoinRowView.swift */; };
 		C37A050B29AA201D00507596 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A050A29AA201D00507596 /* PreviewProvider.swift */; };
 		C37A050D29AA4D2F00507596 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A050C29AA4D2F00507596 /* Double.swift */; };
+		C37A050F29AA6AC500507596 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A050E29AA6AC500507596 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		C37A050829AA200B00507596 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		C37A050A29AA201D00507596 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		C37A050C29AA4D2F00507596 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		C37A050E29AA6AC500507596 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		C37A04F929AA027400507596 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C37A050E29AA6AC500507596 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37A050929AA200B00507596 /* CoinRowView.swift in Sources */,
+				C37A050F29AA6AC500507596 /* HomeViewModel.swift in Sources */,
 				C37A04CC29A9FD0800507596 /* ContentView.swift in Sources */,
 				C37A04FB29AA028C00507596 /* HomeView.swift in Sources */,
 				C37A04CA29A9FD0800507596 /* Tune8App.swift in Sources */,

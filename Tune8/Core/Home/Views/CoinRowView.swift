@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoinRowView: View {
     let coin: CoinModel
-    let showHoldingsColumn: Bool = true
+    let showHoldingsColumn: Bool
 
     var body: some View {
         HStack(spacing: 0) {
@@ -26,7 +26,7 @@ struct CoinRowView: View {
 
 struct CoinRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinRowView(coin: dev.coin)
+        CoinRowView(coin: dev.mockCoin, showHoldingsColumn: false)
             .previewLayout(.sizeThatFits)
     }
 }
@@ -37,12 +37,11 @@ extension CoinRowView {
             Text("\(coin.rank)")
                 .font(.caption)
                 .foregroundColor(.theme.secondaryText)
-                .frame(minWidth: 30)
+                .frame(minWidth: 20)
             Circle()
                 .frame(width: 30, height: 30)
             Text("\(coin.symbol.uppercased())")
                 .font(.headline)
-                .padding(.horizontal, 4)
                 .foregroundColor(.theme.accent)
         }
     }
@@ -55,7 +54,6 @@ extension CoinRowView {
             Text((coin.currentHoldings ?? 0).asNumberString())
         }
         .foregroundColor(.theme.accent)
-        .padding(.horizontal, 10)
     }
 
     private var rightColumn: some View {

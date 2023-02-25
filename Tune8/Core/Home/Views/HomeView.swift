@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false
     @State private var animate: Bool = true
 
@@ -18,6 +19,17 @@ struct HomeView: View {
 
             VStack {
                 homeHeader
+
+                columnTitles
+
+                if showPortfolio {
+                    portfolioList
+                        .transition(.move(edge: .leading))
+                } else {
+                    allCoinsList
+                        .transition(.move(edge: .trailing))
+                }
+
                 Spacer()
             }
         }
@@ -30,6 +42,7 @@ struct HomeView_Previews: PreviewProvider {
             HomeView()
                 .navigationBarHidden(true)
         }
+        .environmentObject(dev.mockHomeVM)
     }
 }
 
@@ -62,6 +75,40 @@ extension HomeView {
                     }
                 }
         }
-        .padding()
+    }
+
+    private var columnTitles: some View {
+        HStack {
+            Text("Coin")
+            Spacer()
+            Text(showPortfolio ? "Holdings" : "")
+            Text("Price")
+                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }
+        .font(.caption)
+        .foregroundColor(.theme.secondaryText)
+        .padding(.horizontal)
+    }
+
+    private var portfolioList: some View {
+        List {
+            ForEach(vm.portfolioCoins) { coin in
+
+                CoinRowView(coin: coin, showHoldingsColumn: true)
+            }
+            .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+        }
+        .listStyle(.plain)
+    }
+
+    private var allCoinsList: some View {
+        List {
+            ForEach(vm.allCoins) { coin in
+
+                CoinRowView(coin: coin, showHoldingsColumn: false)
+            }
+            .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+        }
+        .listStyle(.plain)
     }
 }

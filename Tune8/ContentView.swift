@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm = HomeViewModel()
+
     var body: some View {
         NavigationStack {
             HomeView()
                 .navigationBarHidden(true)
         }
+        .environmentObject(vm)
     }
 }
 
