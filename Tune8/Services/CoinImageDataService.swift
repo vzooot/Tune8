@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 class CoinImageDataService {
-    func getCoinImage(imageUrl: String) -> AnyPublisher<UIImage, Error> {
+    func downloadCoinImage(imageUrl: String) -> AnyPublisher<UIImage, Error> {
         let urlString = imageUrl
 
         guard let url = URL(string: urlString) else {

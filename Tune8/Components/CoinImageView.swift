@@ -12,7 +12,7 @@ struct CoinImageView: View {
     @StateObject var vm: CoinImageViewModel
 
     init(coin: CoinModel) {
-        _vm = StateObject(wrappedValue: CoinImageViewModel(coin: coin))
+        _vm = StateObject(wrappedValue: CoinImageViewModel(coin: coin, imageName: coin.id))
     }
 
     var body: some View {
