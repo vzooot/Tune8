@@ -95,7 +95,9 @@ extension HomeView {
             ForEach(vm.portfolioCoins) { coin in
 
                 CoinRowView(coin: coin, showHoldingsColumn: true)
+                    .listRowBackground(Color.theme.background)
             }
+
             .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
         }
         .listStyle(.plain)
@@ -106,6 +108,7 @@ extension HomeView {
             ForEach(vm.allCoins) { coin in
 
                 CoinRowView(coin: coin, showHoldingsColumn: false)
+                    .listRowBackground(Color.theme.background)
             }
             .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
         }

@@ -20,6 +20,7 @@ struct CoinRowView: View {
             }
             rightColumn
         }
+        .background(Color.theme.background)
         .font(.subheadline)
     }
 }
