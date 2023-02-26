@@ -18,8 +18,12 @@ struct CoinImageView: View {
     var body: some View {
         if let image = vm.image {
             Image(uiImage: image)
+                .resizable()
+
         } else {
             Image(systemName: "heart")
+                .resizable()
+
         }
 
     }
