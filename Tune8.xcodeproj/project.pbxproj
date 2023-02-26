@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C3052D7729AA870000EEFA1F /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3052D7629AA870000EEFA1F /* CoinDataService.swift */; };
+		C3052D7A29AB5DD800EEFA1F /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3052D7929AB5DD800EEFA1F /* NetworkingManager.swift */; };
 		C37A04CA29A9FD0800507596 /* Tune8App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04C929A9FD0800507596 /* Tune8App.swift */; };
 		C37A04CC29A9FD0800507596 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A04CB29A9FD0800507596 /* ContentView.swift */; };
 		C37A04CE29A9FD0A00507596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37A04CD29A9FD0A00507596 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		C3052D7629AA870000EEFA1F /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		C3052D7929AB5DD800EEFA1F /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		C37A04C629A9FD0800507596 /* Tune8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tune8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37A04C929A9FD0800507596 /* Tune8App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune8App.swift; sourceTree = "<group>"; };
 		C37A04CB29A9FD0800507596 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C3052D7829AB5DC700EEFA1F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C3052D7929AB5DD800EEFA1F /* NetworkingManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		C37A04BD29A9FD0800507596 = {
 			isa = PBXGroup;
 			children = (
@@ -122,9 +132,12 @@
 		C37A04C829A9FD0800507596 /* Tune8 */ = {
 			isa = PBXGroup;
 			children = (
+				C37A04FC29AA03CD00507596 /* Components */,
+				C37A04F829AA026D00507596 /* Views */,
+				C37A04F929AA027400507596 /* ViewModels */,
+				C3052D7829AB5DC700EEFA1F /* Utilities */,
 				C3052D7529AA86F300EEFA1F /* Services */,
 				C37A050529AA1DBF00507596 /* Models */,
-				C37A04F629AA025800507596 /* Core */,
 				C37A04F329A9FFCC00507596 /* Extensions */,
 				C37A04C929A9FD0800507596 /* Tune8App.swift */,
 				C37A04CB29A9FD0800507596 /* ContentView.swift */,
@@ -169,24 +182,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C37A04F629AA025800507596 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				C37A04FC29AA03CD00507596 /* Components */,
-				C37A04F729AA026200507596 /* Home */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		C37A04F729AA026200507596 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				C37A04F929AA027400507596 /* ViewModels */,
-				C37A04F829AA026D00507596 /* Views */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		C37A04F829AA026D00507596 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,18 +202,10 @@
 		C37A04FC29AA03CD00507596 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C37A04FD29AA03E100507596 /* CircleButton */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		C37A04FD29AA03E100507596 /* CircleButton */ = {
-			isa = PBXGroup;
-			children = (
 				C37A04FE29AA03EF00507596 /* CircleButtonView.swift */,
 				C37A050029AA0FA200507596 /* CircleButtonAnimationView.swift */,
 			);
-			path = CircleButton;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C37A050529AA1DBF00507596 /* Models */ = {
@@ -367,6 +354,7 @@
 				C37A04CA29A9FD0800507596 /* Tune8App.swift in Sources */,
 				C37A050B29AA201D00507596 /* PreviewProvider.swift in Sources */,
 				C37A04FF29AA03EF00507596 /* CircleButtonView.swift in Sources */,
+				C3052D7A29AB5DD800EEFA1F /* NetworkingManager.swift in Sources */,
 				C37A04F529A9FFDB00507596 /* Color.swift in Sources */,
 				C37A050129AA0FA200507596 /* CircleButtonAnimationView.swift in Sources */,
 				C37A050D29AA4D2F00507596 /* Double.swift in Sources */,

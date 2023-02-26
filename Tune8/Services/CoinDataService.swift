@@ -9,38 +9,40 @@ import Combine
 import Foundation
 
 class CoinDataService {
-    @Published var allCoins: [CoinModel] = []
-    var cancellables = Set<AnyCancellable>()
+    enum NetworkingError: LocalizedError {
+        case badURLResponse(url: URL)
+        case unknown
 
-    init() {
-        getCoins()
+        var errorDescription: String? {
+            switch self {
+            case .badURLResponse(let url):
+                return "Bad response from url: \(url)"
+            case .unknown:
+                return "Unknown error"
+            }
+        }
     }
 
-    func getCoins() {
+    func getCoins() -> AnyPublisher<[CoinModel], Error> {
         let baseUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=24h"
         guard let url = URL(string: baseUrl) else {
-            return
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
 
-        URLSession.shared.dataTaskPublisher(for: url)
+        return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { (data: Data, response: URLResponse) in
-                guard let response = response as? HTTPURLResponse, (200 ... 300).contains(response.statusCode) else {
-                    throw URLError(.badServerResponse)
-                }
-
-                return data
+                try self.handleURLResponse(data: data, response: response, url: url)
             }
             .decode(type: [CoinModel].self, decoder: JSONDecoder())
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    print("Network request finished successfully.")
-                case .failure(let error):
-                    print("Error:", error)
-                }
-            }, receiveValue: { [weak self] coins in
-                self?.allCoins = coins
-            })
-            .store(in: &cancellables)
+            .map { $0 }
+            .eraseToAnyPublisher()
+    }
+
+    func handleURLResponse(data: Data, response: URLResponse, url: URL) throws -> Data {
+        guard let response = response as? HTTPURLResponse, (200 ... 300).contains(response.statusCode) else {
+            throw NetworkingError.badURLResponse(url: url)
+        }
+
+        return data
     }
 }
